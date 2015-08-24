@@ -1,0 +1,8 @@
+// Global
+"GLOBAL_OK"     = "OK";
+"GLOBAL_CANCEL" = "CANCEL";
+"GLOBAL_BACK"   = "BACK";
+"GLOBAL_DELETE" = "Delete";
+
+// App
+"APP_NEED_UPDATE" = "Need updated";

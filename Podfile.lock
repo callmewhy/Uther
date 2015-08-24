@@ -1,0 +1,65 @@
+PODS:
+  - Alamofire (1.3.1)
+  - CryptoSwift (0.0.13)
+  - GCD (0.2.1)
+  - JSQMessagesViewController (7.1.0):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+  - KeyboardMan (0.4)
+  - KeychainAccess (1.2.1)
+  - LTMorphingLabel (0.0.7)
+  - Moya (2.1.0):
+    - Moya/Core (= 2.1.0)
+  - Moya/Core (2.1.0):
+    - Alamofire (~> 1.3.0)
+  - SQLite.swift (0.1.0.pre):
+    - SQLite.swift/Library (= 0.1.0.pre)
+  - SQLite.swift/Core (0.1.0.pre)
+  - SQLite.swift/Library (0.1.0.pre):
+    - SQLite.swift/Core
+  - SwiftColors (0.2.1)
+  - SwiftDate (1.0.11)
+  - SwiftyJSON (2.2.1)
+  - XCGLogger (2.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - CryptoSwift
+  - GCD
+  - JSQMessagesViewController
+  - KeyboardMan
+  - KeychainAccess
+  - LTMorphingLabel
+  - Moya
+  - SQLite.swift (from `https://github.com/stephencelis/SQLite.swift.git`)
+  - SwiftColors
+  - SwiftDate
+  - SwiftyJSON
+  - XCGLogger
+
+EXTERNAL SOURCES:
+  SQLite.swift:
+    :git: https://github.com/stephencelis/SQLite.swift.git
+
+CHECKOUT OPTIONS:
+  SQLite.swift:
+    :commit: 03b27f9a5fb5eba46d3d4d5c856d670d66c92332
+    :git: https://github.com/stephencelis/SQLite.swift.git
+
+SPEC CHECKSUMS:
+  Alamofire: e4ab637e3195b645c814b87a652373439e59f2a4
+  CryptoSwift: 33e2ba400d514a054c69e9f9f6c08a992e42f91c
+  GCD: 57d557822cff42c0b55e021ead82e6c67a3b330e
+  JSQMessagesViewController: ca11f86fa68ca70835f05e169df9244147c1dc40
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+  KeyboardMan: 1a3fc736d9abe8a29030d865eb6759987b0cfaf3
+  KeychainAccess: 3d7922baf90762a976adb7f6030d74c1a4110a1d
+  LTMorphingLabel: aef64d2adb1c659869a8fe22cf2dc7bbad2e28e5
+  Moya: 6ad7d6b1e12b758e46edde8a07245d633e176087
+  SQLite.swift: 62bdf79b05b2a88b94d4b8f9a3b7aa94bfedc660
+  SwiftColors: 42829cb8e63077f45c8c2672377095b964148646
+  SwiftDate: c2fdcd66c327c799749a435a05521b20a4074009
+  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+  XCGLogger: bbfe599d8ccc4c2d0a72ce652eb1f5e6bb28e3d0
+
+COCOAPODS: 0.38.2

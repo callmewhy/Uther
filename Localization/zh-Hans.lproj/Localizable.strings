@@ -1,0 +1,8 @@
+// Global
+"GLOBAL_OK"     = "好的";
+"GLOBAL_CANCEL" = "取消";
+"GLOBAL_BACK"   = "返回";
+"GLOBAL_DELETE" = "删除";
+
+// App
+"APP_NEED_UPDATE" = "需要更新";
