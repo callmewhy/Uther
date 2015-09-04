@@ -60,6 +60,7 @@ extension HistoryDataSource: UITableViewDataSource {
         let message = tMessages[indexPath.row]
         let isLast = (tMessages.count - 1 == indexPath.row)
         cell.update(message.text, seperatorHidden:isLast)
+        cell.backgroundColor = UIColor.clearColor()
         return cell
     }
     
