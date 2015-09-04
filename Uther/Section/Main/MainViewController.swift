@@ -36,12 +36,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupKeyboardAnimation()
         chatDataSource.loadFromDatabase()
-        setupGradientMask()
-
         collectionView.backgroundColor = UIColor.clearColor()
         collectionView.keyboardDismissMode = .OnDrag
         collectionView.dataSource = chatDataSource
         collectionView.delegate = self
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews();
+        if collectionContainerView.layer.mask == nil {
+            self.setupGradientMask();
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
