@@ -9,7 +9,7 @@
 import Foundation
 
 extension Array {
-    func last(i: Int) -> ArraySlice<T> {
+    func last(i: Int) -> ArraySlice<Element> {
         return self[max(count-i, 0) ..< count]
     }
 }

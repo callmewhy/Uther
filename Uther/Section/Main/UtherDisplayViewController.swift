@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import GCD
 import LTMorphingLabel
+import Async
 
 // 消息更新的事件
-enum EventType: Printable {
+enum EventType: CustomStringConvertible {
     // 错误
     case Error
     // 设置头像
@@ -67,8 +67,8 @@ class UtherDisplayViewController: UIViewController {
     let transitionManager = HistoryTransitionManager()
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "show_history" {
-            let toViewController = segue.destinationViewController as? UIViewController
-            toViewController?.transitioningDelegate = self.transitionManager
+            let toViewController = segue.destinationViewController
+            toViewController.transitioningDelegate = self.transitionManager
         }
 
     }
@@ -76,7 +76,7 @@ class UtherDisplayViewController: UIViewController {
         let vc = self.parentViewController! as! MainViewController
         if vc.keyboardShowing {
             vc.view!.endEditing(true)
-            gcd.async(QueueType.Main, delay: 0.3) {
+            Async.main(after: 0.3) {
                 self.performSegueWithIdentifier("show_history", sender: sender)
             }
         } else {

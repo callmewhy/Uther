@@ -120,7 +120,7 @@ extension MainViewController {
 // MARK: - MessageComposerDelegate
 extension MainViewController: MessageComposerDelegate {
     func sendMessage(textView: UITextView, text: String) {
-        Flurry.Message.sendMessage(count(text))
+        Flurry.Message.sendMessage(text.characters.count)
         chatDataSource.addTextMessage(text,
             saved: { messages in
                 self.collectionView.reloadData()
@@ -140,7 +140,7 @@ extension MainViewController: MessageComposerDelegate {
             UIView.animateWithDuration(kDefaultAnimationDuration, animations: { () -> Void in
                 self.view.layoutIfNeeded()
             })
-            collectionView.scrollToBottom(animated: true)
+            collectionView.scrollToBottom(true)
         }
     }
 }

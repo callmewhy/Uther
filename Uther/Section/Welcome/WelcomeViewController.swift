@@ -22,7 +22,7 @@ class WelcomeViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let toViewController = segue.destinationViewController as? UIViewController
-        toViewController?.transitioningDelegate = self.transitionManager
+        let toViewController = segue.destinationViewController
+        toViewController.transitioningDelegate = self.transitionManager
     }
 }

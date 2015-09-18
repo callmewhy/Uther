@@ -14,14 +14,14 @@ import SwiftColors
 class HistoryDataSource: NSObject {
     private var messages = [NSDate: [Message]]() {
         didSet {
-            dataSource = Array(messages.keys).sorted(>).map { date -> [Message] in self.messages[date]! }
+            dataSource = Array(messages.keys).sort(>).map { date -> [Message] in self.messages[date]! }
         }
     }
     private var dataSource = [[Message]]()
     
     func loadFromDatabase() -> Int {
         let offset = dataSource.reduce(0) { $0 + $1.count }
-        let newMessages = DB.getReverseMessages(offset: offset, limit: 20)
+        let newMessages = DB.getReverseMessages(offset, limit: 20)
         for message in newMessages {
             let date = message.date.beginningOfDay
             var tMessages = messages[date] ?? []
@@ -37,7 +37,7 @@ extension HistoryDataSource {
     private func removeMessage(indexPath: NSIndexPath) {
         let message = dataSource[indexPath.section][indexPath.row]
         var cMessages = messages[message.date.beginningOfDay]!
-        if let index = find(cMessages, message) {
+        if let index = cMessages.indexOf(message) {
             cMessages.removeAtIndex(index)
             messages[message.date.beginningOfDay] = cMessages
             message.deleteFromDatabase()

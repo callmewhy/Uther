@@ -16,7 +16,7 @@ class MainDataSource: NSObject {
 
     func loadFromDatabase() -> Int {
         let offset = messages.count
-        messages = DB.getReverseMessages(offset: offset, limit: 3).reverse() + messages
+        messages = DB.getReverseMessages(offset, limit: 3).reverse() + messages
         return messages.count - offset
     }
     
@@ -54,7 +54,8 @@ extension MainDataSource: UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let collectionView = collectionView as! JSQMessagesCollectionView
-        let message = collectionView.dataSource.collectionView(collectionView, messageDataForItemAtIndexPath: indexPath)
+        let dataSource = collectionView.dataSource!
+        let message = dataSource.collectionView(collectionView, messageDataForItemAtIndexPath: indexPath)
         
         // cell
         let identifier: String = JSQMessagesCollectionViewCellOutgoing.cellReuseIdentifier()
@@ -63,19 +64,19 @@ extension MainDataSource: UICollectionViewDataSource {
         cell.backgroundColor = UIColor.clearColor()
         
         // label
-        cell.cellTopLabel.attributedText = collectionView.dataSource.collectionView?(collectionView, attributedTextForCellTopLabelAtIndexPath: indexPath)
-        cell.messageBubbleTopLabel.attributedText = collectionView.dataSource.collectionView?(collectionView, attributedTextForMessageBubbleTopLabelAtIndexPath: indexPath)
-        cell.cellBottomLabel.attributedText = collectionView.dataSource.collectionView?(collectionView, attributedTextForCellBottomLabelAtIndexPath: indexPath)
+        cell.cellTopLabel!.attributedText = dataSource.collectionView?(collectionView, attributedTextForCellTopLabelAtIndexPath: indexPath)
+        cell.messageBubbleTopLabel!.attributedText = dataSource.collectionView?(collectionView, attributedTextForMessageBubbleTopLabelAtIndexPath: indexPath)
+        cell.cellBottomLabel!.attributedText = dataSource.collectionView?(collectionView, attributedTextForCellBottomLabelAtIndexPath: indexPath)
         
         // text
-        cell.textView.text = message.text!()
-        cell.textView.textColor = UIColor(hexString: "#F5F5F5")!
-        cell.textView.userInteractionEnabled = false
+        cell.textView!.text = message.text!()
+        cell.textView!.textColor = UIColor(hexString: "#F5F5F5")!
+        cell.textView!.userInteractionEnabled = false
         
         // bubble image
-        if let bubbleDataSource = collectionView.dataSource.collectionView(collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath) {
-            cell.messageBubbleImageView.image = bubbleDataSource.messageBubbleImage()
-            cell.messageBubbleImageView.highlightedImage = bubbleDataSource.messageBubbleHighlightedImage()
+        if let bubbleDataSource = dataSource.collectionView(collectionView, messageBubbleImageDataForItemAtIndexPath: indexPath) {
+            cell.messageBubbleImageView!.image = bubbleDataSource.messageBubbleImage()
+            cell.messageBubbleImageView!.highlightedImage = bubbleDataSource.messageBubbleHighlightedImage()
         }
         
         return cell
@@ -94,6 +95,10 @@ extension MainDataSource: JSQMessagesCollectionViewDataSource {
     
     func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
         return messages[indexPath.row]
+    }
+    
+    func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
+        
     }
     
     func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {

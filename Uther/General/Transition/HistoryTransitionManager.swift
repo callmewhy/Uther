@@ -12,7 +12,7 @@ class HistoryTransitionManager: NSObject, UIViewControllerAnimatedTransitioning,
     
     // MARK: UIViewControllerAnimatedTransitioning
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let container = transitionContext.containerView()
+        let container = transitionContext.containerView()!
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         if isPresenting {
@@ -36,8 +36,6 @@ class HistoryTransitionManager: NSObject, UIViewControllerAnimatedTransitioning,
         // view
         let offsetY = abs(fromAvatar.height - toAvatar.height)
         let offScreenBottom = CGAffineTransformMakeTranslation(0, offsetY)
-        let offScreenTop = CGAffineTransformMakeTranslation(0, -offsetY)
-        
         let duration = self.transitionDuration(transitionContext)
 
         if isPresenting {
@@ -67,7 +65,7 @@ class HistoryTransitionManager: NSObject, UIViewControllerAnimatedTransitioning,
         )
     }
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }
     
