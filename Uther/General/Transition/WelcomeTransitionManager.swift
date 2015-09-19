@@ -11,7 +11,7 @@ import UIKit
 class WelcomeTransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate {
     // MARK: UIViewControllerAnimatedTransitioning
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        let container = transitionContext.containerView()
+        let container = transitionContext.containerView()!
         let fromView = transitionContext.viewForKey(UITransitionContextFromViewKey)!
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         container.addSubview(toView)
@@ -42,7 +42,7 @@ class WelcomeTransitionManager: NSObject, UIViewControllerAnimatedTransitioning,
         )
     }
 
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }
     

@@ -36,17 +36,17 @@ struct QCloud {
             ParameterName.content     : content
         ]
         
-        let parasString = "&".join( sorted(paras){ $0.0 < $1.0 }.map { "\($0.0)=\($0.1)" } )
+        let parasString = paras.sort{ $0.0 < $1.0 }.map { "\($0.0)=\($0.1)" }.joinWithSeparator("&")
         
         // HMAC
-        var msg = "GETwenzhi.api.qcloud.com/v2/index.php?\(parasString)"
+        let msg = "GETwenzhi.api.qcloud.com/v2/index.php?\(parasString)"
         let key = Secret.key
         var keyBuff = [UInt8]()
         keyBuff += key.utf8
         var msgBuff = [UInt8]()
         msgBuff += msg.utf8
         let hmac = Authenticator.HMAC(key: keyBuff, variant: .sha1).authenticate(msgBuff)!
-        let signature = NSData.withBytes(hmac).base64EncodedStringWithOptions(.allZeros)
+        let signature = NSData.withBytes(hmac).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
         paras += [ParameterName.signature: signature]
         return paras
     }

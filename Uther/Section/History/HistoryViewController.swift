@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Async
 
 class HistoryViewController: UIViewController {
     let dataSource = HistoryDataSource()
@@ -35,7 +35,9 @@ class HistoryViewController: UIViewController {
 // MARK: - Private
 extension HistoryViewController {
     func setupHeaderMask() {
-        var v = tableView.indexPathsForVisibleRows() as! [NSIndexPath]
+        guard var v = tableView.indexPathsForVisibleRows else {
+            return
+        }
         if let first = v.first {
             if first.row > 0 {
                 v.append(NSIndexPath(forRow: first.row - 1, inSection: first.section))
@@ -88,17 +90,17 @@ extension HistoryViewController: UIScrollViewDelegate {
         let contentHeight = tableView.contentSize.height
         if tableView.contentOffset.y + tableView.height > contentHeight {
             isLoading = true
-            GCD.async_in_worker({
+            Async.background {
                 let count = self.dataSource.loadFromDatabase()
                 if count == 0 {
                     return
                 }
-                GCD.async_in_main({
+                Async.main {
                     self.tableView.reloadData()
                     self.tableView.layoutIfNeeded()
                     self.isLoading = false
-                })
-            })
+                }
+            }
         }
     }
 }

@@ -11,10 +11,10 @@ import SQLite
 typealias Pid = Int64
 
 struct DB {
-    private static let db = SQLite.Database(documentsDirectory.URLByAppendingPathComponent("uther.db").absoluteString!)
+    static let db = try! Connection(documentsDirectory.URLByAppendingPathComponent("uther.db").absoluteString)
     
     struct MessageDB {
-        static let table = db["message"]
+        static let table = Table("message")
         // 唯一索引，主键
         static let pid = Expression<Pid>("pid")
         // 消息创建的时间
@@ -28,12 +28,16 @@ struct DB {
     }
 
     static func setupDatabase() {
-        db.create(table: MessageDB.table, ifNotExists: true) { t in
-            t.column(MessageDB.pid, primaryKey: true)
-            t.column(MessageDB.createdTime)
-            t.column(MessageDB.content)
-            t.column(MessageDB.type)
-            t.column(MessageDB.detail)
+        do {
+            try db.run(MessageDB.table.create(ifNotExists: true) { t in
+                t.column(MessageDB.pid, primaryKey: true)
+                t.column(MessageDB.createdTime)
+                t.column(MessageDB.content)
+                t.column(MessageDB.type)
+                t.column(MessageDB.detail)
+            })
+        } catch {
+            log.error("DB ERROR \(error)")
         }
     }
 }

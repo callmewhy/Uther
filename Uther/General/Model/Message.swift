@@ -54,11 +54,14 @@ extension DB {
         if let pid = message.pid {
             setters += [DB.MessageDB.pid <- pid]
         }
-        let insert = DB.MessageDB.table.insert(or: Query.OnConflict.Replace, setters)
-        if insert.statement.failed {
-            log.error("insertion failed: \(insert.statement.reason)")
+        let insert = DB.MessageDB.table.insert(or: OnConflict.Replace, setters)
+        do {
+            let rowid = try DB.db.run(insert)
+            return rowid
+        } catch {
+            log.error("insertion failed: \(error)")
         }
-        return insert.rowid
+        return nil
     }
     private static func deleteMessage(message: Message) {
         if let pid = message.pid {
@@ -67,10 +70,10 @@ extension DB {
         }
     }
     
-    static func getReverseMessages(#offset: Int, limit: Int) -> [Message]{
+    static func getReverseMessages(offset: Int, limit: Int) -> [Message]{
         var messages = [Message]()
         let q = DB.MessageDB.table.order(DB.MessageDB.pid.desc).limit(limit, offset: offset)
-        for row in q {
+        for row in DB.db.prepare(q) {
             let type = MessageType(rawValue: row[DB.MessageDB.type])
             if let type = type {
                 let date = NSDate(timeIntervalSince1970: row[DB.MessageDB.createdTime])

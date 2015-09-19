@@ -29,14 +29,12 @@
 		9661EEC11B78DEDE00C9ADD8 /* QCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEC01B78DEDE00C9ADD8 /* QCloud.swift */; };
 		9662C85F1B70D80B000D63B6 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9662C85C1B70D80B000D63B6 /* Emoji.plist */; };
 		9677CF971B75F7B700F322FD /* Uther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9677CF961B75F7B700F322FD /* Uther.swift */; };
-		9677CF9F1B76379700F322FD /* libFlurry_6.7.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9677CF9E1B76379700F322FD /* libFlurry_6.7.0.a */; };
 		9677CFA11B76382600F322FD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9677CFA01B76382600F322FD /* Security.framework */; };
 		9677CFA51B763F3500F322FD /* Flurry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9677CFA41B763F3500F322FD /* Flurry.swift */; };
 		9677CFA71B7645B200F322FD /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9677CFA61B7645B200F322FD /* Keychain.swift */; };
 		967C5F8A1B68EBC4009B1D6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C5F891B68EBC4009B1D6E /* AppDelegate.swift */; };
 		967C5F911B68EBC4009B1D6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967C5F901B68EBC4009B1D6E /* Images.xcassets */; };
 		967C5FF61B6A39ED009B1D6E /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C5FF51B6A39ED009B1D6E /* Sentiment.swift */; };
-		967C5FFB1B6A4F37009B1D6E /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C5FFA1B6A4F37009B1D6E /* GCD.swift */; };
 		967C60051B6A530C009B1D6E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C5FFF1B6A530C009B1D6E /* MainViewController.swift */; };
 		967C600B1B6A6191009B1D6E /* LOG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C600A1B6A6191009B1D6E /* LOG.swift */; };
 		967C600E1B6A7DFF009B1D6E /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C600D1B6A7DFF009B1D6E /* Macro.swift */; };
@@ -47,6 +45,7 @@
 		967C603C1B6C736C009B1D6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967C603E1B6C736C009B1D6E /* Localizable.strings */; };
 		967C60521B6CD909009B1D6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967C60501B6CD909009B1D6E /* LaunchScreen.xib */; };
 		967C60531B6CD909009B1D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967C60511B6CD909009B1D6E /* Main.storyboard */; };
+		96A4F7791BAC705500C95D48 /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */; settings = {ASSET_TAGS = (); }; };
 		96BF24CA1B75A50F002EDDB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF24C91B75A50F002EDDB8 /* WelcomeViewController.swift */; };
 		96BF25041B75AFE8002EDDB8 /* WelcomeTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF25031B75AFE8002EDDB8 /* WelcomeTransitionManager.swift */; };
 		96BF25061B75D689002EDDB8 /* HistoryTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF25051B75D689002EDDB8 /* HistoryTransitionManager.swift */; };
@@ -78,8 +77,6 @@
 		9662C85C1B70D80B000D63B6 /* Emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Emoji.plist; sourceTree = "<group>"; };
 		9677CF961B75F7B700F322FD /* Uther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uther.swift; sourceTree = "<group>"; };
 		9677CF9B1B76315E00F322FD /* Uther-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uther-Bridging-Header.h"; sourceTree = "<group>"; };
-		9677CF9D1B76379700F322FD /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		9677CF9E1B76379700F322FD /* libFlurry_6.7.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.7.0.a; sourceTree = "<group>"; };
 		9677CFA01B76382600F322FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9677CFA41B763F3500F322FD /* Flurry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flurry.swift; sourceTree = "<group>"; };
 		9677CFA61B7645B200F322FD /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
@@ -88,7 +85,6 @@
 		967C5F891B68EBC4009B1D6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		967C5F901B68EBC4009B1D6E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		967C5FF51B6A39ED009B1D6E /* Sentiment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
-		967C5FFA1B6A4F37009B1D6E /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		967C5FFF1B6A530C009B1D6E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		967C600A1B6A6191009B1D6E /* LOG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LOG.swift; sourceTree = "<group>"; };
 		967C600D1B6A7DFF009B1D6E /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
@@ -100,6 +96,9 @@
 		967C603F1B6C736E009B1D6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		967C60501B6CD909009B1D6E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		967C60511B6CD909009B1D6E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		96A4F7761BAC705500C95D48 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		96A4F7771BAC705500C95D48 /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
+		96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.1.1.a; sourceTree = "<group>"; };
 		96BF24C91B75A50F002EDDB8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		96BF25031B75AFE8002EDDB8 /* WelcomeTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTransitionManager.swift; sourceTree = "<group>"; };
 		96BF25051B75D689002EDDB8 /* HistoryTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransitionManager.swift; sourceTree = "<group>"; };
@@ -112,8 +111,8 @@
 			files = (
 				9677CFA11B76382600F322FD /* Security.framework in Frameworks */,
 				967C60281B6C63BE009B1D6E /* SystemConfiguration.framework in Frameworks */,
-				9677CF9F1B76379700F322FD /* libFlurry_6.7.0.a in Frameworks */,
 				8725B490F806E7F54A6D6D2E /* Pods.framework in Frameworks */,
+				96A4F7791BAC705500C95D48 /* libFlurry_7.1.1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,15 +181,6 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		9677CF9C1B76378B00F322FD /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				9677CF9D1B76379700F322FD /* Flurry.h */,
-				9677CF9E1B76379700F322FD /* libFlurry_6.7.0.a */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
 		967C5F7B1B68EBC4009B1D6E = {
 			isa = PBXGroup;
 			children = (
@@ -219,8 +209,8 @@
 				967C5FE51B6A3358009B1D6E /* General */,
 				967C5FFC1B6A530C009B1D6E /* Section */,
 				967C5F901B68EBC4009B1D6E /* Images.xcassets */,
+				96A4F7751BAC705500C95D48 /* Vendor */,
 				9662C85B1B70D80B000D63B6 /* Resource */,
-				9677CF9C1B76378B00F322FD /* Vendor */,
 				967C5F871B68EBC4009B1D6E /* Supporting Files */,
 			);
 			path = Uther;
@@ -267,7 +257,6 @@
 		967C5FF91B6A4F22009B1D6E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				967C5FFA1B6A4F37009B1D6E /* GCD.swift */,
 				967C600A1B6A6191009B1D6E /* LOG.swift */,
 				967C60141B6A8EBC009B1D6E /* DB.swift */,
 				9677CF961B75F7B700F322FD /* Uther.swift */,
@@ -332,6 +321,16 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		96A4F7751BAC705500C95D48 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				96A4F7761BAC705500C95D48 /* Flurry.h */,
+				96A4F7771BAC705500C95D48 /* FlurryWatch.h */,
+				96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
 		96BF24C81B75A4B9002EDDB8 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,7 +387,8 @@
 		967C5F7C1B68EBC4009B1D6E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = callmewhy;
 				TargetAttributes = {
 					967C5F831B68EBC4009B1D6E = {
@@ -495,7 +495,6 @@
 				961C2E3A1B7C371B00957368 /* Double+Uther.swift in Sources */,
 				967C600B1B6A6191009B1D6E /* LOG.swift in Sources */,
 				96BF24CA1B75A50F002EDDB8 /* WelcomeViewController.swift in Sources */,
-				967C5FFB1B6A4F37009B1D6E /* GCD.swift in Sources */,
 				9677CFA51B763F3500F322FD /* Flurry.swift in Sources */,
 				967C5F8A1B68EBC4009B1D6E /* AppDelegate.swift in Sources */,
 				961C2E1F1B7B64C400957368 /* UtherDisplayViewController.swift in Sources */,
@@ -556,6 +555,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -635,6 +635,7 @@
 					"$(PROJECT_DIR)/Uther/Vendor",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.uther;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Uther-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -658,6 +659,7 @@
 					"$(PROJECT_DIR)/Uther/Vendor",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.uther;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Uther-Bridging-Header.h";
 			};
