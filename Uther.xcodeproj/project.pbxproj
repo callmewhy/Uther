@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8725B490F806E7F54A6D6D2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207ED364F5CBC90B7B58B07 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8725B490F806E7F54A6D6D2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207ED364F5CBC90B7B58B07 /* Pods.framework */; };
 		961C2E1F1B7B64C400957368 /* UtherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E1E1B7B64C400957368 /* UtherDisplayViewController.swift */; };
 		961C2E231B7B737000957368 /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E221B7B737000957368 /* MainDataSource.swift */; };
 		961C2E251B7B738B00957368 /* MessageComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E241B7B738B00957368 /* MessageComposerView.swift */; };
@@ -45,7 +45,7 @@
 		967C603C1B6C736C009B1D6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967C603E1B6C736C009B1D6E /* Localizable.strings */; };
 		967C60521B6CD909009B1D6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967C60501B6CD909009B1D6E /* LaunchScreen.xib */; };
 		967C60531B6CD909009B1D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967C60511B6CD909009B1D6E /* Main.storyboard */; };
-		96A4F7791BAC705500C95D48 /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */; settings = {ASSET_TAGS = (); }; };
+		96A4F7791BAC705500C95D48 /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */; };
 		96BF24CA1B75A50F002EDDB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF24C91B75A50F002EDDB8 /* WelcomeViewController.swift */; };
 		96BF25041B75AFE8002EDDB8 /* WelcomeTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF25031B75AFE8002EDDB8 /* WelcomeTransitionManager.swift */; };
 		96BF25061B75D689002EDDB8 /* HistoryTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF25051B75D689002EDDB8 /* HistoryTransitionManager.swift */; };
