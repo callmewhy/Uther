@@ -9,7 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import SwiftDate
-import SwiftColors
+import SwiftHEXColors
 
 class HistoryDataSource: NSObject {
     private var messages = [NSDate: [Message]]() {
@@ -23,7 +23,7 @@ class HistoryDataSource: NSObject {
         let offset = dataSource.reduce(0) { $0 + $1.count }
         let newMessages = DB.getReverseMessages(offset, limit: 20)
         for message in newMessages {
-            let date = message.date.beginningOfDay
+            let date = message.date.startOf(NSCalendarUnit.Day, inRegion: Region.defaultRegion())
             var tMessages = messages[date] ?? []
             tMessages.append(message)
             messages[date] = tMessages
@@ -36,10 +36,10 @@ class HistoryDataSource: NSObject {
 extension HistoryDataSource {
     private func removeMessage(indexPath: NSIndexPath) {
         let message = dataSource[indexPath.section][indexPath.row]
-        var cMessages = messages[message.date.beginningOfDay]!
-        if let index = cMessages.indexOf(message) {
-            cMessages.removeAtIndex(index)
-            messages[message.date.beginningOfDay] = cMessages
+        var cMessages = messages[message.date.startOf(NSCalendarUnit.Day, inRegion: Region.defaultRegion())]
+        if let index = cMessages!.indexOf(message) {
+            cMessages!.removeAtIndex(index)
+            messages[message.date.startOf(NSCalendarUnit.Day, inRegion: Region.defaultRegion())] = cMessages
             message.deleteFromDatabase()
         }
     }
@@ -65,7 +65,7 @@ extension HistoryDataSource: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dataSource[section][0].date.toMediumDateString()
+        return dataSource[section][0].date.toString()
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

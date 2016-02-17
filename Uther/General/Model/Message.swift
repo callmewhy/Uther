@@ -73,7 +73,7 @@ extension DB {
     static func getReverseMessages(offset: Int, limit: Int) -> [Message]{
         var messages = [Message]()
         let q = DB.MessageDB.table.order(DB.MessageDB.pid.desc).limit(limit, offset: offset)
-        for row in DB.db.prepare(q) {
+        for row in try! DB.db.prepare(q) {
             let type = MessageType(rawValue: row[DB.MessageDB.type])
             if let type = type {
                 let date = NSDate(timeIntervalSince1970: row[DB.MessageDB.createdTime])

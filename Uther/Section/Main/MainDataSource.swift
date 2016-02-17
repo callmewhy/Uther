@@ -9,7 +9,7 @@
 import UIKit
 import JSQMessagesViewController
 import SwiftDate
-import SwiftColors
+import SwiftHEXColors
 
 class MainDataSource: NSObject {
     private var messages:[Message] = []
@@ -113,7 +113,8 @@ extension MainDataSource: JSQMessagesCollectionViewDataSource {
     func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
         let message = messages[indexPath.row]
         let attributes = [ NSForegroundColorAttributeName: UIColor(hexString: "#F5F5F5")!.colorWithAlphaComponent(0.5) ]
-        let time = NSAttributedString(string: message.date.toMediumDateString(), attributes: attributes)
+        // FIXME
+        let time = NSAttributedString(string: message.date.toString()!, attributes: attributes)
         return time
     }
 }
