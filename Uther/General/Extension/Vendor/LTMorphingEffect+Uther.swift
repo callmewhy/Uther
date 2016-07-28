@@ -15,7 +15,7 @@ extension LTMorphingEffect {
     static func next() -> LTMorphingEffect {
         let max = 7
         let i = index < max ? index : ((index - max) / 3) % 7
-        index++
+        index += 1
         log.debug("\(i)")
         return LTMorphingEffect(rawValue: i)!
     }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8725B490F806E7F54A6D6D2E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5207ED364F5CBC90B7B58B07 /* Pods.framework */; };
 		961C2E1F1B7B64C400957368 /* UtherDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E1E1B7B64C400957368 /* UtherDisplayViewController.swift */; };
 		961C2E231B7B737000957368 /* MainDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E221B7B737000957368 /* MainDataSource.swift */; };
 		961C2E251B7B738B00957368 /* MessageComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E241B7B738B00957368 /* MessageComposerView.swift */; };
@@ -45,16 +44,28 @@
 		967C603C1B6C736C009B1D6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967C603E1B6C736C009B1D6E /* Localizable.strings */; };
 		967C60521B6CD909009B1D6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967C60501B6CD909009B1D6E /* LaunchScreen.xib */; };
 		967C60531B6CD909009B1D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967C60511B6CD909009B1D6E /* Main.storyboard */; };
-		96A4F7791BAC705500C95D48 /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */; };
 		96BF24CA1B75A50F002EDDB8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF24C91B75A50F002EDDB8 /* WelcomeViewController.swift */; };
 		96BF25041B75AFE8002EDDB8 /* WelcomeTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF25031B75AFE8002EDDB8 /* WelcomeTransitionManager.swift */; };
 		96BF25061B75D689002EDDB8 /* HistoryTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BF25051B75D689002EDDB8 /* HistoryTransitionManager.swift */; };
+		96F8BF941D4A242800F4219E /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 96F8BF931D4A242800F4219E /* Cartfile */; };
+		96F8BFA31D4A536500F4219E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF951D4A536500F4219E /* Alamofire.framework */; };
+		96F8BFA41D4A536500F4219E /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF961D4A536500F4219E /* Async.framework */; };
+		96F8BFA51D4A536500F4219E /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF971D4A536500F4219E /* CryptoSwift.framework */; };
+		96F8BFA61D4A536500F4219E /* JSQMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF981D4A536500F4219E /* JSQMessages.framework */; };
+		96F8BFA71D4A536500F4219E /* KeyboardMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF991D4A536500F4219E /* KeyboardMan.framework */; };
+		96F8BFA81D4A536500F4219E /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF9A1D4A536500F4219E /* KeychainAccess.framework */; };
+		96F8BFA91D4A536500F4219E /* LTMorphingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF9B1D4A536500F4219E /* LTMorphingLabel.framework */; };
+		96F8BFAA1D4A536500F4219E /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF9C1D4A536500F4219E /* Moya.framework */; };
+		96F8BFAB1D4A536500F4219E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF9D1D4A536500F4219E /* RxSwift.framework */; };
+		96F8BFAC1D4A536500F4219E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF9E1D4A536500F4219E /* SQLite.framework */; };
+		96F8BFAD1D4A536500F4219E /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF9F1D4A536500F4219E /* SwiftDate.framework */; };
+		96F8BFAE1D4A536500F4219E /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BFA01D4A536500F4219E /* SwiftHEXColors.framework */; };
+		96F8BFAF1D4A536500F4219E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BFA11D4A536500F4219E /* SwiftyJSON.framework */; };
+		96F8BFB01D4A536500F4219E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BFA21D4A536500F4219E /* XCGLogger.framework */; };
+		96F8BFB51D4A537A00F4219E /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BFB41D4A537A00F4219E /* libFlurry_7.1.1.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5207ED364F5CBC90B7B58B07 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		698E964CA784577F2D906BDD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6FE5B270A47671D439141E3E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		961C2E1E1B7B64C400957368 /* UtherDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtherDisplayViewController.swift; sourceTree = "<group>"; };
 		961C2E221B7B737000957368 /* MainDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataSource.swift; sourceTree = "<group>"; };
 		961C2E241B7B738B00957368 /* MessageComposerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposerView.swift; sourceTree = "<group>"; };
@@ -96,12 +107,27 @@
 		967C603F1B6C736E009B1D6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		967C60501B6CD909009B1D6E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		967C60511B6CD909009B1D6E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		96A4F7761BAC705500C95D48 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		96A4F7771BAC705500C95D48 /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
-		96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.1.1.a; sourceTree = "<group>"; };
 		96BF24C91B75A50F002EDDB8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		96BF25031B75AFE8002EDDB8 /* WelcomeTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTransitionManager.swift; sourceTree = "<group>"; };
 		96BF25051B75D689002EDDB8 /* HistoryTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransitionManager.swift; sourceTree = "<group>"; };
+		96F8BF931D4A242800F4219E /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		96F8BF951D4A536500F4219E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		96F8BF961D4A536500F4219E /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
+		96F8BF971D4A536500F4219E /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		96F8BF981D4A536500F4219E /* JSQMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQMessages.framework; path = Carthage/Build/iOS/JSQMessages.framework; sourceTree = "<group>"; };
+		96F8BF991D4A536500F4219E /* KeyboardMan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyboardMan.framework; path = Carthage/Build/iOS/KeyboardMan.framework; sourceTree = "<group>"; };
+		96F8BF9A1D4A536500F4219E /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = "<group>"; };
+		96F8BF9B1D4A536500F4219E /* LTMorphingLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMorphingLabel.framework; path = Carthage/Build/iOS/LTMorphingLabel.framework; sourceTree = "<group>"; };
+		96F8BF9C1D4A536500F4219E /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		96F8BF9D1D4A536500F4219E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		96F8BF9E1D4A536500F4219E /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		96F8BF9F1D4A536500F4219E /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		96F8BFA01D4A536500F4219E /* SwiftHEXColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHEXColors.framework; path = Carthage/Build/iOS/SwiftHEXColors.framework; sourceTree = "<group>"; };
+		96F8BFA11D4A536500F4219E /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		96F8BFA21D4A536500F4219E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		96F8BFB21D4A537A00F4219E /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		96F8BFB31D4A537A00F4219E /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryWatch.h; sourceTree = "<group>"; };
+		96F8BFB41D4A537A00F4219E /* libFlurry_7.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_7.1.1.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,25 +135,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F8BFA31D4A536500F4219E /* Alamofire.framework in Frameworks */,
+				96F8BFA41D4A536500F4219E /* Async.framework in Frameworks */,
+				96F8BFA51D4A536500F4219E /* CryptoSwift.framework in Frameworks */,
+				96F8BFA61D4A536500F4219E /* JSQMessages.framework in Frameworks */,
+				96F8BFA71D4A536500F4219E /* KeyboardMan.framework in Frameworks */,
+				96F8BFA81D4A536500F4219E /* KeychainAccess.framework in Frameworks */,
+				96F8BFA91D4A536500F4219E /* LTMorphingLabel.framework in Frameworks */,
+				96F8BFAA1D4A536500F4219E /* Moya.framework in Frameworks */,
+				96F8BFAB1D4A536500F4219E /* RxSwift.framework in Frameworks */,
+				96F8BFAC1D4A536500F4219E /* SQLite.framework in Frameworks */,
+				96F8BFAD1D4A536500F4219E /* SwiftDate.framework in Frameworks */,
+				96F8BFAE1D4A536500F4219E /* SwiftHEXColors.framework in Frameworks */,
+				96F8BFAF1D4A536500F4219E /* SwiftyJSON.framework in Frameworks */,
+				96F8BFB51D4A537A00F4219E /* libFlurry_7.1.1.a in Frameworks */,
+				96F8BFB01D4A536500F4219E /* XCGLogger.framework in Frameworks */,
 				9677CFA11B76382600F322FD /* Security.framework in Frameworks */,
 				967C60281B6C63BE009B1D6E /* SystemConfiguration.framework in Frameworks */,
-				8725B490F806E7F54A6D6D2E /* Pods.framework in Frameworks */,
-				96A4F7791BAC705500C95D48 /* libFlurry_7.1.1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3DB2309B29EF87F52C35BE07 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				698E964CA784577F2D906BDD /* Pods.debug.xcconfig */,
-				6FE5B270A47671D439141E3E /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		961C2E281B7C371B00957368 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,11 +214,11 @@
 		967C5F7B1B68EBC4009B1D6E = {
 			isa = PBXGroup;
 			children = (
+				96F8BF931D4A242800F4219E /* Cartfile */,
 				9677CF9B1B76315E00F322FD /* Uther-Bridging-Header.h */,
 				967C5F861B68EBC4009B1D6E /* Uther */,
 				967C60391B6C734D009B1D6E /* Localization */,
 				967C5F851B68EBC4009B1D6E /* Products */,
-				3DB2309B29EF87F52C35BE07 /* Pods */,
 				C37D35300207225A5318125C /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -324,9 +354,7 @@
 		96A4F7751BAC705500C95D48 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				96A4F7761BAC705500C95D48 /* Flurry.h */,
-				96A4F7771BAC705500C95D48 /* FlurryWatch.h */,
-				96A4F7781BAC705500C95D48 /* libFlurry_7.1.1.a */,
+				96F8BFB11D4A537A00F4219E /* Flurry */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -348,12 +376,35 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
+		96F8BFB11D4A537A00F4219E /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				96F8BFB21D4A537A00F4219E /* Flurry.h */,
+				96F8BFB31D4A537A00F4219E /* FlurryWatch.h */,
+				96F8BFB41D4A537A00F4219E /* libFlurry_7.1.1.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
 		C37D35300207225A5318125C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96F8BF951D4A536500F4219E /* Alamofire.framework */,
+				96F8BF961D4A536500F4219E /* Async.framework */,
+				96F8BF971D4A536500F4219E /* CryptoSwift.framework */,
+				96F8BF981D4A536500F4219E /* JSQMessages.framework */,
+				96F8BF991D4A536500F4219E /* KeyboardMan.framework */,
+				96F8BF9A1D4A536500F4219E /* KeychainAccess.framework */,
+				96F8BF9B1D4A536500F4219E /* LTMorphingLabel.framework */,
+				96F8BF9C1D4A536500F4219E /* Moya.framework */,
+				96F8BF9D1D4A536500F4219E /* RxSwift.framework */,
+				96F8BF9E1D4A536500F4219E /* SQLite.framework */,
+				96F8BF9F1D4A536500F4219E /* SwiftDate.framework */,
+				96F8BFA01D4A536500F4219E /* SwiftHEXColors.framework */,
+				96F8BFA11D4A536500F4219E /* SwiftyJSON.framework */,
+				96F8BFA21D4A536500F4219E /* XCGLogger.framework */,
 				9677CFA01B76382600F322FD /* Security.framework */,
 				967C60271B6C63BE009B1D6E /* SystemConfiguration.framework */,
-				5207ED364F5CBC90B7B58B07 /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -365,12 +416,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 967C5FA31B68EBC5009B1D6E /* Build configuration list for PBXNativeTarget "Uther" */;
 			buildPhases = (
-				35D764D8DA4C2135B34B2E2D /* Check Pods Manifest.lock */,
 				967C5F801B68EBC4009B1D6E /* Sources */,
 				967C5F811B68EBC4009B1D6E /* Frameworks */,
 				967C5F821B68EBC4009B1D6E /* Resources */,
-				7D846BFD9DC065688BAF103A /* Embed Pods Frameworks */,
-				654600CD2E6FB38F29F17E2D /* Copy Pods Resources */,
+				96F8BFB61D4A57ED00F4219E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -420,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F8BF941D4A242800F4219E /* Cartfile in Resources */,
 				967C60521B6CD909009B1D6E /* LaunchScreen.xib in Resources */,
 				967C60531B6CD909009B1D6E /* Main.storyboard in Resources */,
 				9662C85F1B70D80B000D63B6 /* Emoji.plist in Resources */,
@@ -431,50 +481,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		35D764D8DA4C2135B34B2E2D /* Check Pods Manifest.lock */ = {
+		96F8BFB61D4A57ED00F4219E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Async.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeyboardMan.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/KeychainAccess.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftHEXColors.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LTMorphingLabel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JSQMessages.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 			);
-			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		654600CD2E6FB38F29F17E2D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7D846BFD9DC065688BAF103A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -620,19 +653,20 @@
 		};
 		967C5FA41B68EBC5009B1D6E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 698E964CA784577F2D906BDD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Uther/Vendor",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Uther/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Uther/Vendor",
+					"$(PROJECT_DIR)/Uther/Vendor/Flurry",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.uther;
@@ -644,19 +678,20 @@
 		};
 		967C5FA51B68EBC5009B1D6E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FE5B270A47671D439141E3E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Uther/Vendor",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Uther/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Uther/Vendor",
+					"$(PROJECT_DIR)/Uther/Vendor/Flurry",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.uther;

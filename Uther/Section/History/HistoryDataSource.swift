@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import JSQMessagesViewController
 import SwiftDate
 import SwiftHEXColors
 
@@ -23,7 +22,7 @@ class HistoryDataSource: NSObject {
         let offset = dataSource.reduce(0) { $0 + $1.count }
         let newMessages = DB.getReverseMessages(offset, limit: 20)
         for message in newMessages {
-            let date = message.date.startOf(NSCalendarUnit.Day, inRegion: Region.defaultRegion())
+            let date = message.date.startOf(NSCalendarUnit.Day)
             var tMessages = messages[date] ?? []
             tMessages.append(message)
             messages[date] = tMessages
@@ -36,10 +35,10 @@ class HistoryDataSource: NSObject {
 extension HistoryDataSource {
     private func removeMessage(indexPath: NSIndexPath) {
         let message = dataSource[indexPath.section][indexPath.row]
-        var cMessages = messages[message.date.startOf(NSCalendarUnit.Day, inRegion: Region.defaultRegion())]
+        var cMessages = messages[message.date.startOf(NSCalendarUnit.Day)]
         if let index = cMessages!.indexOf(message) {
             cMessages!.removeAtIndex(index)
-            messages[message.date.startOf(NSCalendarUnit.Day, inRegion: Region.defaultRegion())] = cMessages
+            messages[message.date.startOf(NSCalendarUnit.Day)] = cMessages
             message.deleteFromDatabase()
         }
     }

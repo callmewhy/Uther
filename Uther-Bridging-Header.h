@@ -10,4 +10,5 @@
 #define Uther_Uther_Bridging_Header_h_h
 
 #import "Flurry.h"
+#import <JSQMessages/JSQMessages.h>
 #endif

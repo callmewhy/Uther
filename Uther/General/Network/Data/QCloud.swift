@@ -45,7 +45,7 @@ struct QCloud {
         keyBuff += key.utf8
         var msgBuff = [UInt8]()
         msgBuff += msg.utf8
-        let hmac = Authenticator.HMAC(key: keyBuff, variant: .sha1).authenticate(msgBuff)!
+        let hmac = try! Authenticator.HMAC(key: keyBuff, variant: .sha1).authenticate(msgBuff)
         let signature = NSData.withBytes(hmac).base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
         paras += [ParameterName.signature: signature]
         return paras

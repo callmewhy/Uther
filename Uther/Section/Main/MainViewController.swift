@@ -8,7 +8,6 @@
 
 import UIKit
 import KeyboardMan
-import JSQMessagesViewController
 
 class MainViewController: UIViewController {
     

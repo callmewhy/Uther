@@ -20,6 +20,14 @@ ScreenShots:
 - Support English
 - Can delete message history now
 
+### How to install dependencies
+
+Run the following command in your terminal:
+
+```
+carthage build
+```
+
 
 ### License
 GNU General Public License v3.0

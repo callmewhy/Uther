@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import JSQMessagesViewController
 import SwiftDate
 import SwiftHEXColors
 

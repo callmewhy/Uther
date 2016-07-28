@@ -16,17 +16,12 @@ public enum Sentiment {
 }
 
 // MARK: - MoyaProvider
-let endpointResolver = { (endpoint: Endpoint<Sentiment>) -> (NSURLRequest) in
-    let request: NSMutableURLRequest = endpoint.urlRequest.mutableCopy() as! NSMutableURLRequest
-    request.timeoutInterval = 2.0
-    return request
-}
-let SentimentProvider = MoyaProvider(endpointResolver: endpointResolver)
+let SentimentProvider = MoyaProvider<Sentiment>()
 
 // TODO: extension MoyaTarget to handle respose
 extension MoyaProvider {
     typealias positiveHandler = PositiveValue? -> Void
-    func requestCPositive(endpoint: T, completion: positiveHandler) -> Cancellable {
+    func requestCPositive(endpoint: Target, completion: positiveHandler) -> Cancellable {
         return self.requestJSON(endpoint, completion: { json in
             if let json = json {
                 let code = json["code"].intValue
@@ -45,7 +40,7 @@ extension MoyaProvider {
         })
     }
     
-    func requestEPositive(endpoint: T, completion: positiveHandler) -> Cancellable {
+    func requestEPositive(endpoint: Target, completion: positiveHandler) -> Cancellable {
         return self.requestJSON(endpoint, completion: { json in
             if let json = json {
                 let probability = json["probability"]
@@ -61,7 +56,7 @@ extension MoyaProvider {
 }
 
 // MARK: - MoyaTarget
-extension Sentiment: MoyaTarget {
+extension Sentiment: TargetType {
     public var baseURL: NSURL {
         switch self {
         case .Chinese:
@@ -89,7 +84,7 @@ extension Sentiment: MoyaTarget {
         }
     }
 
-    public var parameters: [String: AnyObject] {
+    public var parameters: [String: AnyObject]? {
         switch self {
         case .Chinese(let text):
             return QCloud.getRequestParameters(text)
@@ -105,5 +100,9 @@ extension Sentiment: MoyaTarget {
         case .English:
             return "{\"probability\": {\"neg\": 0.22499999999999998,\"neutral\": 0.099999999999999978,\"pos\": 0.77500000000000002},\"label\": \"pos\"}".dataUsingEncoding(NSUTF8StringEncoding)!
         }
+    }
+    
+    public var multipartBody: [Moya.MultipartFormData]? {
+        return nil
     }
 }

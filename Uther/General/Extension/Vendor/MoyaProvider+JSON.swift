@@ -11,13 +11,14 @@ import Moya
 import SwiftyJSON
 
 extension MoyaProvider {
-    func requestJSON(endpoint: T, completion: (JSON?) -> Void) -> Cancellable {
-        return self.request(endpoint) { (data, status, response, error) in
-            if let d = data {
-                let json = JSON(data: d)
+    func requestJSON(endpoint: Target, completion: (JSON?) -> Void) -> Cancellable {
+        return self.request(endpoint) { result in
+            switch result {
+            case .Success(let data):
+                let json = JSON(data: data.data)
                 log.debug("\(json)")
                 completion(json)
-            } else {
+            case .Failure(let error):
                 log.error("\(error)")
                 completion(nil)
             }
