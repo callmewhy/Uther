@@ -11,7 +11,7 @@ import KeychainAccess
 
 
 struct Keychain {
-    static private let keychain = KeychainAccess.Keychain(service: "com.callmewhy.uther")
+    static fileprivate let keychain = KeychainAccess.Keychain(service: "com.callmewhy.uther")
     struct Keys {
         static let userId = "userid"
     }
@@ -21,7 +21,7 @@ struct Keychain {
                 log.info("\(uuid)")
                 return uuid
             } else {
-                let uuid = NSUUID().UUIDString
+                let uuid = UUID().uuidString
                 keychain[Keys.userId] = uuid
                 log.info("\(uuid)")
                 return uuid

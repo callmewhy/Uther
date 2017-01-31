@@ -25,55 +25,55 @@ extension UIView {
     var top:        CGFloat { return self.frame.origin.y }
     var bottom:     CGFloat { return self.frame.origin.y + self.frame.size.height }
     
-    func setWidth(width:CGFloat) {
+    func setWidth(_ width:CGFloat) {
         self.frame.size.width = width
     }
     
-    func setHeight(height:CGFloat) {
+    func setHeight(_ height:CGFloat) {
         self.frame.size.height = height
     }
     
-    func setSize(size:CGSize) {
+    func setSize(_ size:CGSize) {
         self.frame.size = size
     }
     
-    func setOrigin(point:CGPoint) {
+    func setOrigin(_ point:CGPoint) {
         self.frame.origin = point
     }
     
-    func setX(x:CGFloat) {
-        self.frame.origin = CGPointMake(x, self.frame.origin.y)
+    func setX(_ x:CGFloat) {
+        self.frame.origin = CGPoint(x: x, y: self.frame.origin.y)
     }
     
-    func setY(y:CGFloat) {
-        self.frame.origin = CGPointMake(self.frame.origin.x, y)
+    func setY(_ y:CGFloat) {
+        self.frame.origin = CGPoint(x: self.frame.origin.x, y: y)
     }
     
-    func setCenterX(x:CGFloat) {
-        self.center = CGPointMake(x, self.center.y)
+    func setCenterX(_ x:CGFloat) {
+        self.center = CGPoint(x: x, y: self.center.y)
     }
     
-    func setCenterY(y:CGFloat) {
-        self.center = CGPointMake(self.center.x, y)
+    func setCenterY(_ y:CGFloat) {
+        self.center = CGPoint(x: self.center.x, y: y)
     }
     
-    func roundCorner(radius:CGFloat) {
+    func roundCorner(_ radius:CGFloat) {
         self.layer.cornerRadius = radius
     }
     
-    func setTop(top:CGFloat) {
+    func setTop(_ top:CGFloat) {
         self.frame.origin.y = top
     }
     
-    func setLeft(left:CGFloat) {
+    func setLeft(_ left:CGFloat) {
         self.frame.origin.x = left
     }
     
-    func setRight(right:CGFloat) {
+    func setRight(_ right:CGFloat) {
         self.frame.origin.x = right - self.frame.size.width
     }
     
-    func setBottom(bottom:CGFloat) {
+    func setBottom(_ bottom:CGFloat) {
         self.frame.origin.y = bottom - self.frame.size.height
     }
 }

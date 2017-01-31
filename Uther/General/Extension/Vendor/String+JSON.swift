@@ -12,7 +12,7 @@ import SwiftyJSON
 extension String {
     var json: JSON {
         get {
-            if let dataFromString = self.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+            if let dataFromString = self.data(using: String.Encoding.utf8, allowLossyConversion: false) {
                 return JSON(data: dataFromString)
             } else {
                 return JSON(self)

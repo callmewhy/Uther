@@ -20,7 +20,7 @@ class TextMessage: Message {
     }
 
     init(text: String) {
-        super.init(type: .Text, content: text)
+        super.init(type: .text, content: text)
     }
     
     required init(coder aDecoder: NSCoder) {

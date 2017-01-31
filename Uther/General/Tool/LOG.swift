@@ -10,28 +10,18 @@ import UIKit
 import XCGLogger
 
 let log: XCGLogger = {
-    let log = XCGLogger.defaultInstance()
-    let logPath : NSURL = cacheDirectory.URLByAppendingPathComponent("XCGLogger.Log")
-    log.setup(.Debug, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: false, writeToFile: logPath, fileLogLevel: .Info)
-    log.xcodeColorsEnabled = true
-    log.xcodeColors = [
-        .Verbose: .lightGrey,
-        .Debug: .darkGrey,
-        .Info: .darkGreen,
-        .Warning: .orange,
-        .Error: .red,
-        .Severe: .whiteOnRed
-    ]
-
+    let log = XCGLogger.default
+    let logPath : NSURL = cacheDirectory.appendingPathComponent("XCGLogger.Log") as NSURL
+    log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: false, writeToFile: logPath, fileLevel: .info)
     return log
     }()
 
-var documentsDirectory: NSURL {
-    let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+var documentsDirectory: URL {
+    let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return urls[urls.endIndex-1]
 }
 
-var cacheDirectory: NSURL {
-    let urls = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)
+var cacheDirectory: URL {
+    let urls = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
     return urls[urls.endIndex-1]
 }

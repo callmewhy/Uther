@@ -15,16 +15,16 @@ extension Double {
         }
     }
     
-    func format(f: String) -> String {
+    func format(_ f: String) -> String {
         return String(format: "%\(f)f", self)
     }
 }
 
 
-private let allEmojiDic = NSDictionary(contentsOfFile: NSBundle.mainBundle().pathForResource("Emoji", ofType: "plist")!)!
+private let allEmojiDic = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Emoji", ofType: "plist")!)!
 
 struct Emojis {
-    static private var emojiDic = [String:[String]]()
+    static fileprivate var emojiDic = [String:[String]]()
     
     static func getEmoji(positive v:Double) -> String {
         var v = min(1, v)

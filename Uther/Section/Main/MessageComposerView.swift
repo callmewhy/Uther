@@ -9,8 +9,8 @@
 import UIKit
 
 @objc protocol MessageComposerDelegate {
-    func messageDidChange(textView: UITextView, height: CGFloat)
-    func sendMessage(textView: UITextView, text: String)
+    func messageDidChange(_ textView: UITextView, height: CGFloat)
+    func sendMessage(_ textView: UITextView, text: String)
 }
 
 
@@ -29,10 +29,10 @@ class MessageComposerView: UITextView {
         self.delegate = self
     }
     
-    override func scrollRectToVisible(rect: CGRect, animated: Bool) {
+    override func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
     }
     
-    func scrollRectToVisible(rect: CGRect) {
+    func scrollRectToVisible(_ rect: CGRect) {
         if contentSize.height < kMaxHeight {
             return
         }
@@ -42,7 +42,7 @@ class MessageComposerView: UITextView {
 
 // MARK: - UITextViewDelegate
 extension MessageComposerView: UITextViewDelegate {
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if (text == "\n") {
             messageDelegate?.sendMessage(self, text: self.text)
             self.text = ""
@@ -52,7 +52,7 @@ extension MessageComposerView: UITextViewDelegate {
         return true;
     }
     
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         resetContentSizeAndOffset()
     }
 }
@@ -63,9 +63,9 @@ extension MessageComposerView {
         layoutIfNeeded()
         messageDelegate?.messageDidChange(self, height: min(self.contentSize.height, kMaxHeight))
         if let selectedTextRange = self.selectedTextRange {
-            let caretRect = self.caretRectForPosition(selectedTextRange.end);
+            let caretRect = self.caretRect(for: selectedTextRange.end);
             let height = textContainerInset.bottom + caretRect.size.height
-            self.scrollRectToVisible(CGRectMake(caretRect.origin.x, caretRect.origin.y, caretRect.size.width, height))
+            self.scrollRectToVisible(CGRect(x: caretRect.origin.x, y: caretRect.origin.y, width: caretRect.size.width, height: height))
         }
     }
 }

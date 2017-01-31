@@ -11,14 +11,14 @@ import SQLite
 typealias Pid = Int64
 
 struct DB {
-    static let db = try! Connection(documentsDirectory.URLByAppendingPathComponent("uther.db").absoluteString)
+    static let db = try! Connection((documentsDirectory.appendingPathComponent("uther.db").absoluteString))
     
     struct MessageDB {
         static let table = Table("message")
         // 唯一索引，主键
         static let pid = Expression<Pid>("pid")
         // 消息创建的时间
-        static let createdTime = Expression<NSTimeInterval>("created_time")
+        static let createdTime = Expression<TimeInterval>("created_time")
         // 消息的内容
         static let content = Expression<String>("content")
         // 消息的类型

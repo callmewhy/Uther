@@ -13,16 +13,16 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .Slide)
-        UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
+        UIApplication.shared.setStatusBarHidden(false, with: .slide)
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: true)
     }
 
-    override func viewDidAppear(animated: Bool) {
-        self.performSegueWithIdentifier("show_main", sender: nil)
+    override func viewDidAppear(_ animated: Bool) {
+        self.performSegue(withIdentifier: "show_main", sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let toViewController = segue.destinationViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let toViewController = segue.destination
         toViewController.transitioningDelegate = self.transitionManager
     }
 }

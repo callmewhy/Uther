@@ -11,7 +11,7 @@ import UIKit
 class HistoryCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
 
-    func update(text: String, seperatorHidden: Bool) {
+    func update(_ text: String, seperatorHidden: Bool) {
         messageLabel.text = text
     }
     

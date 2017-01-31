@@ -13,24 +13,24 @@ import Async
 // 消息更新的事件
 enum EventType: CustomStringConvertible {
     // 错误
-    case Error
+    case error
     // 设置头像
-    case Avatar(ImageName)
+    case avatar(ImageName)
     // 设置表情
-    case Emoji(PositiveValue)
+    case emoji(PositiveValue)
     // 设置文字
-    case Text(String)
+    case text(String)
     
     var description: String {
         get {
             switch self {
-            case Error:
+            case .error:
                 return "Error"
-            case let Avatar(i):
+            case let .avatar(i):
                 return "Avatar:\(i)"
-            case let Emoji(p):
+            case let .emoji(p):
                 return "Emoji(\(p))"
-            case let Text(t):
+            case let .text(t):
                 return "Text:\(t)"
             }
         }
@@ -45,56 +45,56 @@ class UtherDisplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
 
-    func updateWithEventType(event: EventType) {
+    func updateWithEventType(_ event: EventType) {
         log.debug(event.description)
         switch event {
-        case let .Avatar(imageName):
+        case let .avatar(imageName):
             avatarImageView.image = UIImage(named: imageName)
-        case let .Emoji(p):
+        case let .emoji(p):
             messageLabel.text = p.emoji + (debug ? " \(p)" : "")
             messageLabel.morphingEffect = LTMorphingEffect.next()
-        case let .Text(text):
+        case let .text(text):
             messageLabel.text = text
-        case .Error:
+        case .error:
             messageLabel.text = "_(:з」∠)_" + (debug ? " error" : "")
         }
     }
 
     let transitionManager = HistoryTransitionManager()
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "show_history" {
-            let toViewController = segue.destinationViewController
+            let toViewController = segue.destination
             toViewController.transitioningDelegate = self.transitionManager
         }
 
     }
-    @IBAction func avatarTapped(sender: AnyObject) {
-        let vc = self.parentViewController! as! MainViewController
+    @IBAction func avatarTapped(_ sender: AnyObject) {
+        let vc = self.parent! as! MainViewController
         if vc.keyboardShowing {
             vc.view!.endEditing(true)
             Async.main(after: 0.3) {
-                self.performSegueWithIdentifier("show_history", sender: sender)
+                self.performSegue(withIdentifier: "show_history", sender: sender)
             }
         } else {
-            self.performSegueWithIdentifier("show_history", sender: sender)
+            self.performSegue(withIdentifier: "show_history", sender: sender)
         }
     }
 }
 
 extension UtherDisplayViewController: LTMorphingLabelDelegate {
-    func morphingDidStart(label: LTMorphingLabel) {
+    func morphingDidStart(_ label: LTMorphingLabel) {
 
     }
     
-    func morphingDidComplete(label: LTMorphingLabel) {
+    func morphingDidComplete(_ label: LTMorphingLabel) {
 
     }
     
-    func morphingOnProgress(label: LTMorphingLabel, _ progress: Float) {
+    func morphingOnProgress(_ label: LTMorphingLabel, _ progress: Float) {
 
     }
 }

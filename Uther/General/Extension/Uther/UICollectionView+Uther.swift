@@ -9,12 +9,12 @@
 import UIKit
 
 extension UICollectionView {
-    func scrollToBottom(animated:Bool = false) {
-        let contentHeight = self.collectionViewLayout.collectionViewContentSize().height
-        if contentHeight < CGRectGetHeight(self.bounds) {
-            self.scrollRectToVisible(CGRectMake(0.0, 0, 1.0, 1.0), animated:animated)
+    func scrollToBottom(_ animated:Bool = false) {
+        let contentHeight = self.collectionViewLayout.collectionViewContentSize.height
+        if contentHeight < self.bounds.height {
+            self.scrollRectToVisible(CGRect(x: 0.0, y: 0, width: 1.0, height: 1.0), animated:animated)
             return;
         }
-        self.scrollRectToVisible(CGRectMake(0.0, contentHeight - 1.0, 1.0, 1.0), animated:animated)
+        self.scrollRectToVisible(CGRect(x: 0.0, y: contentHeight - 1.0, width: 1.0, height: 1.0), animated:animated)
     }
 }

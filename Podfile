@@ -6,13 +6,21 @@ target 'Uther' do
     pod 'JSQMessagesViewController'
     pod 'AsyncSwift'
     pod 'Alamofire'
-    pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'SwiftyJSON'
     pod 'KeychainAccess'
     pod 'XCGLogger'
-    pod 'SQLite.swift', '~> 0.10.1'
-    pod 'SwiftDate', '~> 2.0'
+    pod 'SQLite.swift'
+    pod 'SwiftDate'
     pod 'CryptoSwift'
     pod 'SwiftHEXColors'
     pod 'LTMorphingLabel'
     pod 'Moya'
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
 end

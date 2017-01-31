@@ -8,13 +8,14 @@
 
 import UIKit
 import KeyboardMan
+import JSQMessagesViewController
 
 class MainViewController: UIViewController {
     
     let keyboardMan = KeyboardMan()
     let chatDataSource = MainDataSource()
     var keyboardShowing = false
-
+    
     var utherViewController: UtherDisplayViewController!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
@@ -25,7 +26,7 @@ class MainViewController: UIViewController {
         didSet {
             composerView.textColor = UIColor(hexString: "#F4FFF8")
             composerView.backgroundColor = UIColor(white: 1, alpha: 0.05)
-            composerView.layer.borderColor = UIColor(hexString: "#F4FFF8", alpha: 0.2)?.CGColor
+            composerView.layer.borderColor = UIColor(hexString: "#F4FFF8", alpha: 0.2)?.cgColor
             composerView.layer.borderWidth = 1
             composerView.layer.cornerRadius = 5
         }
@@ -35,8 +36,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupKeyboardAnimation()
         chatDataSource.loadFromDatabase()
-        collectionView.backgroundColor = UIColor.clearColor()
-        collectionView.keyboardDismissMode = .OnDrag
+        collectionView.backgroundColor = UIColor.clear
+        collectionView.keyboardDismissMode = .onDrag
         collectionView.dataSource = chatDataSource
         collectionView.delegate = self
     }
@@ -48,17 +49,17 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "uther_display" {
-            utherViewController = segue.destinationViewController as! UtherDisplayViewController;
+            utherViewController = segue.destination as! UtherDisplayViewController;
         }
     }
     
-    @IBAction func backgroundTaped(sender: AnyObject) {
+    @IBAction func backgroundTaped(_ sender: AnyObject) {
         view.endEditing(true)
     }
     
-    @IBAction func inputBackgroundTaped(sender: AnyObject) {
+    @IBAction func inputBackgroundTaped(_ sender: AnyObject) {
         composerView.becomeFirstResponder()
     }
 }
@@ -82,7 +83,7 @@ extension MainViewController {
     func setupGradientMask() {
         let gradient = CAGradientLayer();
         gradient.frame = collectionContainerView.bounds
-        gradient.colors = [UIColor.clearColor().CGColor, UIColor.blackColor().CGColor];
+        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor];
         gradient.locations = [0, 0.3]
         collectionContainerView.layer.mask = gradient
     }
@@ -90,53 +91,52 @@ extension MainViewController {
 
 // MARK: - Private
 extension MainViewController {
-    private func updateCollectionViewWithMessages(messages: [Message]) {
+    fileprivate func updateCollectionViewWithMessages(_ messages: [Message]) {
         if messages.count <= 3 {
             return
         }
-        let layout = collectionView.collectionViewLayout
-        let firstIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        let firstCellHeight = layout.sizeForItemAtIndexPath(firstIndexPath).height + layout.minimumLineSpacing
+        let layout = collectionView.collectionViewLayout!
+        let firstIndexPath = IndexPath(row: 0, section: 0)
+        let firstCellHeight = layout.sizeForItem(at: firstIndexPath).height + layout.minimumLineSpacing
         let oldOffsetY = collectionView.contentOffset.y
-        let oldContentHeight = layout.collectionViewContentSize().height
+        let oldContentHeight = layout.collectionViewContentSize.height
         
-        let c = collectionView
-        UIView.animateWithDuration(0) { _ in
+        let c = collectionView!
+        UIView.animate(withDuration: 0) { _ in
             c.performBatchUpdates({
-                    self.chatDataSource.removeMessageAtIndex(0)
-                    c.deleteItemsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)])
-                    c.contentOffset = CGPointMake(0, oldOffsetY - firstCellHeight)
-                },completion:nil)
+                self.chatDataSource.removeMessageAtIndex(0)
+                c.deleteItems(at: [NSIndexPath(row: 0, section: 0) as IndexPath])
+                c.contentOffset = CGPoint(x: 0, y: oldOffsetY - firstCellHeight)
+            }, completion:nil)
         }
         
         let y = max(oldContentHeight - firstCellHeight - collectionView.height, 0.0)
-        UIView.animateWithDuration(kDefaultAnimationDuration) { _ in
-            c.contentOffset = CGPointMake(0, y)
+        UIView.animate(withDuration: kDefaultAnimationDuration) { _ in
+            c.contentOffset = CGPoint(x: 0, y: y)
         }
     }
 }
 
 // MARK: - MessageComposerDelegate
 extension MainViewController: MessageComposerDelegate {
-    func sendMessage(textView: UITextView, text: String) {
-        Flurry.Message.sendMessage(text.characters.count)
+    func sendMessage(_ textView: UITextView, text: String) {
         chatDataSource.addTextMessage(text,
-            saved: { messages in
-                self.collectionView.reloadData()
-                self.updateCollectionViewWithMessages(messages)
-            },
-            received: { event in
-                self.utherViewController.updateWithEventType(event)
-            }
+                                      saved: { messages in
+                                        self.collectionView.reloadData()
+                                        self.updateCollectionViewWithMessages(messages)
+        },
+                                      received: { event in
+                                        self.utherViewController.updateWithEventType(event)
+        }
         )
     }
     
-    func messageDidChange(textView: UITextView, height: CGFloat) {
+    func messageDidChange(_ textView: UITextView, height: CGFloat) {
         let oldH = heightConstraint.constant;
         let newH = height
         if (fabs(newH - oldH) > 1) {
             heightConstraint.constant = newH
-            UIView.animateWithDuration(kDefaultAnimationDuration, animations: { () -> Void in
+            UIView.animate(withDuration: kDefaultAnimationDuration, animations: { () -> Void in
                 self.view.layoutIfNeeded()
             })
             collectionView.scrollToBottom(true)
@@ -146,32 +146,32 @@ extension MainViewController: MessageComposerDelegate {
 
 // MARK: -  UICollectionDelegate
 extension MainViewController: JSQMessagesCollectionViewDelegateFlowLayout {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let layout = collectionViewLayout as! JSQMessagesCollectionViewFlowLayout
-        return layout.sizeForItemAtIndexPath(indexPath)
+        return layout.sizeForItem(at: indexPath)
     }
     
-    func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellTopLabelAt indexPath: IndexPath!) -> CGFloat {
         return 0.0
     }
     
-    func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat {
         return 0.0
     }
     
-    func collectionView(collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForCellBottomLabelAt indexPath: IndexPath!) -> CGFloat {
         return 0.0
     }
     
-    func collectionView(collectionView: JSQMessagesCollectionView!, didTapAvatarImageView avatarImageView: UIImageView!, atIndexPath indexPath: NSIndexPath!) {
+    func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapAvatarImageView avatarImageView: UIImageView!, at indexPath: IndexPath!) {
         
     }
     
-    func collectionView(collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAtIndexPath indexPath: NSIndexPath!) {
+    func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
         view.endEditing(true)
     }
     
-    func collectionView(collectionView: JSQMessagesCollectionView!, didTapCellAtIndexPath indexPath: NSIndexPath!, touchLocation: CGPoint) {
+    func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapCellAt indexPath: IndexPath!, touchLocation: CGPoint) {
         view.endEditing(true)
     }
 }

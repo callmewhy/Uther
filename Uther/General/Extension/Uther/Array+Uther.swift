@@ -10,6 +10,6 @@ import Foundation
 
 extension Array {
     func last(i: Int) -> ArraySlice<Element> {
-        return self[max(count-i, 0) ..< count]
+        return self.suffix(from: i)
     }
 }

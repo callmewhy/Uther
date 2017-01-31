@@ -11,8 +11,8 @@ import SwiftyJSON
 import Moya
 
 public enum Sentiment {
-    case Chinese(String)
-    case English(String)
+    case chinese(String)
+    case english(String)
 }
 
 // MARK: - MoyaProvider
@@ -20,33 +20,30 @@ let SentimentProvider = MoyaProvider<Sentiment>()
 
 // TODO: extension MoyaTarget to handle respose
 extension MoyaProvider {
-    typealias positiveHandler = PositiveValue? -> Void
-    func requestCPositive(endpoint: Target, completion: positiveHandler) -> Cancellable {
+    typealias positiveHandler = (PositiveValue?) -> Void
+    func requestCPositive(_ endpoint: Target, completion: @escaping positiveHandler) -> Cancellable {
         return self.requestJSON(endpoint, completion: { json in
             if let json = json {
                 let code = json["code"].intValue
                 if code == 0 {
                     let p = json["positive"].double
                     log.info("服务器返回解析结果：开心概率 = \(p)")
-                    Flurry.Message.receivePositive(p)
                     completion(p)
                     return
                 } else {
                     let message = json["message"].stringValue
-                    Flurry.Error.Wenzhi.logError("文字情绪解析失败：\(message)")
                 }
             }
             completion(nil)
         })
     }
     
-    func requestEPositive(endpoint: Target, completion: positiveHandler) -> Cancellable {
+    func requestEPositive(_ endpoint: Target, completion: @escaping positiveHandler) -> Cancellable {
         return self.requestJSON(endpoint, completion: { json in
             if let json = json {
                 let probability = json["probability"]
                 let p = probability["pos"].double
                 log.info("服务器返回解析结果：开心概率 = \(p)")
-                Flurry.Message.receivePositive(p)
                 completion(p)
                 return
             }
@@ -57,48 +54,56 @@ extension MoyaProvider {
 
 // MARK: - MoyaTarget
 extension Sentiment: TargetType {
-    public var baseURL: NSURL {
+    public var task: Task {
+        return Task.request
+    }
+
+    public var parameterEncoding: ParameterEncoding {
+        return URLEncoding.default
+    }
+
+    public var baseURL: URL {
         switch self {
-        case .Chinese:
-            return NSURL(string: "https://wenzhi.api.qcloud.com")!
-        case .English:
-            return NSURL(string: "http://text-processing.com")!
+        case .chinese:
+            return URL(string: "https://wenzhi.api.qcloud.com")!
+        case .english:
+            return URL(string: "http://text-processing.com")!
         }
     }
     
     public var path: String {
         switch self {
-        case .Chinese:
+        case .chinese:
             return "v2/index.php"
-        case .English:
+        case .english:
             return "api/sentiment/"
         }
     }
 
     public var method: Moya.Method {
         switch self {
-        case .Chinese:
-            return .GET
-        case .English:
-            return .POST
+        case .chinese:
+            return .get
+        case .english:
+            return .post
         }
     }
 
-    public var parameters: [String: AnyObject]? {
+    public var parameters: [String : Any]? {
         switch self {
-        case .Chinese(let text):
+        case .chinese(let text):
             return QCloud.getRequestParameters(text)
-        case .English(let text):
-            return ["text": text]
+        case .english(let text):
+            return ["text": text as AnyObject]
         }
     }
     
-    public var sampleData: NSData {
+    public var sampleData: Data {
         switch self {
-        case .Chinese:
-            return "{}".dataUsingEncoding(NSUTF8StringEncoding)!
-        case .English:
-            return "{\"probability\": {\"neg\": 0.22499999999999998,\"neutral\": 0.099999999999999978,\"pos\": 0.77500000000000002},\"label\": \"pos\"}".dataUsingEncoding(NSUTF8StringEncoding)!
+        case .chinese:
+            return "{}".data(using: String.Encoding.utf8)!
+        case .english:
+            return "{\"probability\": {\"neg\": 0.22499999999999998,\"neutral\": 0.099999999999999978,\"pos\": 0.77500000000000002},\"label\": \"pos\"}".data(using: String.Encoding.utf8)!
         }
     }
     
