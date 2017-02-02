@@ -7,7 +7,6 @@ target 'Uther' do
     pod 'AsyncSwift'
     pod 'Alamofire'
     pod 'SwiftyJSON'
-    pod 'KeychainAccess'
     pod 'XCGLogger'
     pod 'SQLite.swift'
     pod 'SwiftDate'

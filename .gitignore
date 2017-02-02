@@ -44,3 +44,9 @@ fir-cli_tmp/
 
 # R.swift
 *.generated.swift
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output

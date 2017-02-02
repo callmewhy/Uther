@@ -12,7 +12,13 @@ import XCGLogger
 let log: XCGLogger = {
     let log = XCGLogger.default
     let logPath : NSURL = cacheDirectory.appendingPathComponent("XCGLogger.Log") as NSURL
-    log.setup(level: .debug, showThreadName: true, showLevel: true, showFileNames: true, showLineNumbers: false, writeToFile: logPath, fileLevel: .info)
+    log.setup(level: .debug,
+              showThreadName: true,
+              showLevel: true,
+              showFileNames: true,
+              showLineNumbers: false,
+              writeToFile: logPath,
+              fileLevel: .info)
     return log
     }()
 
