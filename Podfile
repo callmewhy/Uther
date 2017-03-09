@@ -14,6 +14,7 @@ target 'Uther' do
     pod 'SwiftHEXColors'
     pod 'LTMorphingLabel'
     pod 'Moya'
+    pod 'Bugly'
 end
 
 post_install do |installer|
@@ -23,3 +24,10 @@ post_install do |installer|
         end
     end
 end
+
+plugin 'cocoapods-keys', {
+    :project => "Uther",
+    :keys => [
+        "BuglyAppId",
+    ]
+}
