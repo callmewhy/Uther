@@ -23,18 +23,14 @@ extension MoyaProvider {
     typealias positiveHandler = (PositiveValue?) -> Void
     func requestCPositive(_ endpoint: Target, completion: @escaping positiveHandler) -> Cancellable {
         return self.requestJSON(endpoint, completion: { json in
-            if let json = json {
-                let code = json["code"].intValue
-                if code == 0 {
-                    let p = json["positive"].double
-                    log.info("服务器返回解析结果：开心概率 = \(p)")
-                    completion(p)
-                    return
-                } else {
-                    let message = json["message"].stringValue
-                }
+            guard let json = json, json["code"].intValue == 0 else {
+                completion(nil)
+                return
             }
-            completion(nil)
+            let p = json["positive"].double
+            log.info("positive value: \(p)")
+            completion(p)
+            return
         })
     }
     

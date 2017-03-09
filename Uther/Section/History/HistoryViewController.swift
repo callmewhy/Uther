@@ -24,7 +24,7 @@ class HistoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.loadFromDatabase()
+        let _ = dataSource.loadFromDatabase()
     }
 
     @IBAction func back(_ sender: AnyObject) {

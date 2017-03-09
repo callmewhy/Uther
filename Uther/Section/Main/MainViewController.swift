@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupKeyboardAnimation()
-        chatDataSource.loadFromDatabase()
+        let _ = chatDataSource.loadFromDatabase()
         collectionView.backgroundColor = UIColor.clear
         collectionView.keyboardDismissMode = .onDrag
         collectionView.dataSource = chatDataSource
@@ -104,7 +104,7 @@ extension MainViewController {
         let c = collectionView!
         UIView.animate(withDuration: 0) { _ in
             c.performBatchUpdates({
-                self.chatDataSource.removeMessageAtIndex(0)
+                let _ = self.chatDataSource.removeMessageAtIndex(0)
                 c.deleteItems(at: [NSIndexPath(row: 0, section: 0) as IndexPath])
                 c.contentOffset = CGPoint(x: 0, y: oldOffsetY - firstCellHeight)
             }, completion:nil)

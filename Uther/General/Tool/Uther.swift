@@ -44,7 +44,7 @@ struct Uther {
         }
         // 联网检测
         if text.isChinese {
-            SentimentProvider.requestCPositive(Sentiment.chinese(text)) { p in
+            let _ = SentimentProvider.requestCPositive(Sentiment.chinese(text)) { p in
                 if let p = p {
                     completion(.emoji(p))
                 } else {
@@ -52,7 +52,7 @@ struct Uther {
                 }
             }
         } else {
-            SentimentProvider.requestEPositive(Sentiment.english(text)) { p in
+            let _ = SentimentProvider.requestEPositive(Sentiment.english(text)) { p in
                 if let p = p {
                     completion(.emoji(p))
                 } else {

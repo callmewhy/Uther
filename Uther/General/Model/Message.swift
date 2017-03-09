@@ -66,7 +66,7 @@ extension DB {
     fileprivate static func deleteMessage(_ message: Message) {
         if let pid = message.pid {
             let query = DB.MessageDB.table.filter(DB.MessageDB.pid == pid)
-            query.delete()
+            let _ = query.delete()
         }
     }
     
