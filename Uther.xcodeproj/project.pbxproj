@@ -25,7 +25,6 @@
 		961C2E481B7C7AA100957368 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E471B7C7AA100957368 /* HistoryCell.swift */; };
 		961C2E4A1B7C98DF00957368 /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961C2E491B7C98DF00957368 /* HistoryDataSource.swift */; };
 		96261D081B6DC255004AA0F1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96261D071B6DC255004AA0F1 /* HistoryViewController.swift */; };
-		962AE7841E7184BE00E75AF0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 962AE7831E7184BE00E75AF0 /* README.md */; };
 		9661EEC11B78DEDE00C9ADD8 /* QCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9661EEC01B78DEDE00C9ADD8 /* QCloud.swift */; };
 		9662C85F1B70D80B000D63B6 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9662C85C1B70D80B000D63B6 /* Emoji.plist */; };
 		9677CF971B75F7B700F322FD /* Uther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9677CF961B75F7B700F322FD /* Uther.swift */; };
@@ -40,7 +39,6 @@
 		967C60151B6A8EBC009B1D6E /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C60141B6A8EBC009B1D6E /* DB.swift */; };
 		967C60221B6BE505009B1D6E /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967C60211B6BE505009B1D6E /* TextMessage.swift */; };
 		967C60281B6C63BE009B1D6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967C60271B6C63BE009B1D6E /* SystemConfiguration.framework */; };
-		967C603C1B6C736C009B1D6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 967C603E1B6C736C009B1D6E /* Localizable.strings */; };
 		967C60521B6CD909009B1D6E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967C60501B6CD909009B1D6E /* LaunchScreen.xib */; };
 		967C60531B6CD909009B1D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967C60511B6CD909009B1D6E /* Main.storyboard */; };
 		96BCF0EA1E4060BB00CA78D7 /* Date+Uther.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BCF0E91E4060BB00CA78D7 /* Date+Uther.swift */; };
@@ -72,7 +70,6 @@
 		961C2E491B7C98DF00957368 /* HistoryDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
 		96261D071B6DC255004AA0F1 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		962AE7801E71814C00E75AF0 /* Uther-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Uther-Bridging-Header.h"; sourceTree = "<group>"; };
-		962AE7831E7184BE00E75AF0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9661EEC01B78DEDE00C9ADD8 /* QCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCloud.swift; sourceTree = "<group>"; };
 		9662C85C1B70D80B000D63B6 /* Emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Emoji.plist; sourceTree = "<group>"; };
 		9677CF961B75F7B700F322FD /* Uther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uther.swift; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 		967C60141B6A8EBC009B1D6E /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		967C60211B6BE505009B1D6E /* TextMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextMessage.swift; sourceTree = "<group>"; };
 		967C60271B6C63BE009B1D6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		967C603D1B6C736C009B1D6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		967C603F1B6C736E009B1D6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		967C60501B6CD909009B1D6E /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		967C60511B6CD909009B1D6E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		96BCF0E91E4060BB00CA78D7 /* Date+Uther.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Uther.swift"; sourceTree = "<group>"; };
@@ -185,9 +180,7 @@
 		967C5F7B1B68EBC4009B1D6E = {
 			isa = PBXGroup;
 			children = (
-				962AE7831E7184BE00E75AF0 /* README.md */,
 				967C5F861B68EBC4009B1D6E /* Uther */,
-				967C60391B6C734D009B1D6E /* Localization */,
 				967C5F851B68EBC4009B1D6E /* Products */,
 				C37D35300207225A5318125C /* Frameworks */,
 				F5B5CD038B2ABC326A803028 /* Pods */,
@@ -301,14 +294,6 @@
 				967C60211B6BE505009B1D6E /* TextMessage.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		967C60391B6C734D009B1D6E /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-				967C603E1B6C736C009B1D6E /* Localizable.strings */,
-			);
-			path = Localization;
 			sourceTree = "<group>";
 		};
 		967C604F1B6CD909009B1D6E /* Storyboard */ = {
@@ -437,7 +422,6 @@
 				967C60521B6CD909009B1D6E /* LaunchScreen.xib in Resources */,
 				967C60531B6CD909009B1D6E /* Main.storyboard in Resources */,
 				9662C85F1B70D80B000D63B6 /* Emoji.plist in Resources */,
-				967C603C1B6C736C009B1D6E /* Localizable.strings in Resources */,
 				967C5F911B68EBC4009B1D6E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +490,6 @@
 				961C2E431B7C371B00957368 /* MoyaProvider+JSON.swift in Sources */,
 				961C2E481B7C7AA100957368 /* HistoryCell.swift in Sources */,
 				961C2E401B7C371B00957368 /* UIView+ShortCut.swift in Sources */,
-				962AE7841E7184BE00E75AF0 /* README.md in Sources */,
 				961C2E3E1B7C371B00957368 /* UICollectionView+Uther.swift in Sources */,
 				961C2E3A1B7C371B00957368 /* Double+Uther.swift in Sources */,
 				967C600B1B6A6191009B1D6E /* LOG.swift in Sources */,
@@ -534,18 +517,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		967C603E1B6C736C009B1D6E /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				967C603D1B6C736C009B1D6E /* en */,
-				967C603F1B6C736E009B1D6E /* zh-Hans */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		967C5FA11B68EBC5009B1D6E /* Debug */ = {

@@ -17,7 +17,6 @@ struct Uther {
     }
     
     fileprivate static var dictionary: [String:String]?
-    fileprivate static var needUpdate = false
     
     static func handleMessage(_ text:String, completion:@escaping (EventType)->()) {
         // 查看版本
@@ -25,15 +24,10 @@ struct Uther {
             completion(.text(UIApplication.versionDescription()))
             return
         }
-        // 头像切换
-        if text.uppercased() == "CG" {
-            completion(.avatar("CGAvatar"))
-            return
-        }
         // 开启测试模式
         if text.uppercased() == "DEBUG" {
             debug = !debug
-            completion(.text("开启 DEBUG 模式"))
+            completion(.text("DEBUG MODE ON"))
             return
         }
         // 如果处于测试模式，则随机显示一个表情
@@ -46,11 +40,6 @@ struct Uther {
         // 本地词库检测
         if let d = dictionary, let localResult = d[text.uppercased()] {
             completion(.text(localResult))
-            return
-        }
-        // 需要更新
-        if needUpdate {
-            completion(.text("(_・・_) " + "APP_NEED_UPDATE".localized))
             return
         }
         // 联网检测
