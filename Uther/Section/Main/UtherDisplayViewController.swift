@@ -10,15 +10,15 @@ import UIKit
 import LTMorphingLabel
 import Async
 
-// 消息更新的事件
+// News update event
 enum EventType: CustomStringConvertible {
-    // 错误
+    // error
     case error
-    // 设置头像
+    // Set Avatar
     case avatar(ImageName)
-    // 设置表情
+    // Set expression
     case emoji(PositiveValue)
-    // 设置文字
+    // Set text
     case text(String)
     
     var description: String {
